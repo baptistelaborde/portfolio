@@ -1,10 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url = src/index.html" />
-  </head>
-  <body>
-    <p>Redirection vers la page d'accueil...</p>
-  </body>
+
+<head>
+  <title>Baptiste Laborde</title>
+  <link rel="stylesheet" type="text/css" href="lib/style.css" />
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">BL</a>
+    <ul>
+      <li><a href="#" class="active">Accueil</a></li>
+      <li><a href="#">Projets</a></li>
+      <li><a href="#">A propos</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  <section>
+    <img src="img/dark/stars.png" id="stars" />
+    <img src="img/dark/moon.png" id="moon" />
+    <img src="img/dark/mountains_behind.png" id="mountains_behind" />
+    <h2 id="text">Baptiste Laborde</h2>
+    <a href="#sec" id="btn">Explorer</a>
+    <img src="img/dark/mountains_front.png" id="mountains_front" />
+  </section>
+  <div class="sec" id="sec">
+    <h2>Parallax Scrolling Effects</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste molestias
+      omnis minus! Adipisci quos assumenda alias quam corrupti ullam ipsam
+      ratione laboriosam molestias. Unde atque ipsam harum modi similique
+      laborum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+      praesentium fugit perferendis, consectetur laudantium vero adipisci
+      eveniet consequatur. Quaerat incidunt voluptates veniam, porro a maiores
+      itaque qui? Sit, dolores enim. Lorem ipsum, dolor sit amet consectetur
+      adipisicing elit. Quo totam ducimus minima cumque iure voluptas ipsam
+      soluta veritatis repudiandae, autem laboriosam quis molestias quas neque
+      aut, harum facere velit magnam?<br /><br />Lorem, ipsum dolor sit amet
+      consectetur adipisicing elit. Iste molestias omnis minus! Adipisci quos
+      assumenda alias quam corrupti ullam ipsam ratione laboriosam molestias.
+      Unde atque ipsam harum modi similique laborum!<br /><br />Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. Iste molestias omnis minus!
+      Adipisci quos assumenda alias quam corrupti ullam ipsam ratione
+      laboriosam molestias. Unde atque ipsam harum modi similique laborum!
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo totam
+      ducimus minima cumque iure voluptas ipsam soluta veritatis repudiandae,
+      autem laboriosam quis molestias quas neque aut, harum facere velit
+      magnam?<br /><br />Lorem, ipsum dolor sit amet consectetur adipisicing
+      elit. Iste molestias omnis minus! Adipisci quos assumenda alias quam
+      corrupti ullam ipsam ratione laboriosam molestias. Unde atque ipsam
+      harum modi similique laborum! Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Earum praesentium fugit perferendis, consectetur
+      laudantium vero adipisci eveniet consequatur. Quaerat incidunt
+      voluptates veniam, porro a maiores itaque qui? Sit, dolores enim. Lorem
+      ipsum, dolor sit amet consectetur adipisicing elit. Quo totam ducimus
+      minima cumque iure voluptas ipsam soluta veritatis repudiandae, autem
+      laboriosam quis molestias quas neque aut, harum facere velit magnam?<br /><br />Lorem,
+      ipsum dolor sit amet consectetur adipisicing elit. Iste molestias omnis
+      minus! Adipisci quos assumenda alias quam corrupti ullam ipsam ratione
+      laboriosam molestias. Unde atque ipsam harum modi similique laborum!
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo totam
+      ducimus minima cumque iure voluptas ipsam soluta veritatis repudiandae,
+      autem laboriosam quis molestias quas neque aut, harum facere velit
+      magnam?
+    </p>
+  </div>
+
+  <script>
+    let stars = document.getElementById("stars");
+    let moon = document.getElementById("moon");
+    let mountains_behind = document.getElementById("mountains_behind");
+    let text = document.getElementById("text");
+    let btn = document.getElementById("btn");
+    let mountains_front = document.getElementById("mountains_front");
+    let header = document.querySelector("header");
+
+    window.addEventListener("scroll", function () {
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px';
+      moon.style.top = value * 1.05 + 'px';
+      mountains_behind.style.top = value * 0.5 + 'px';
+      mountains_front.style.top = value * 0 + 'px';
+      text.style.marginRight = value * 4 + 'px';
+      text.style.marginTop = value * 1.5 + 'px';
+      btn.style.marginTop = value * 1.25 + 'px';
+      header.style.top = value + 'px';
+    })
+  </script>
+</body>
+
 </html>
