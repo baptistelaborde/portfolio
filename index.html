@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="stylesheet" href="css/switcher.css">
     <link rel="stylesheet" href="css/style.css">
@@ -20,20 +21,25 @@
                 </a>
             </li>
         </ul>
-        <ul style="padding-right: 2%;">
+        <ul class="menu" style="padding-right: 2%;">
             <li>
-                <a role="button" class="contrast outline" href="#">Accueil</a>
+                <a role="button" class="contrast outline menuItem" href="#">Accueil</a>
             </li>
             <li>
-                <a role="button" class="contrast outline" href="#projects">Projets</a>
+                <a role="button" class="contrast outline menuItem" href="#projects">Projets</a>
             </li>
             <li>
-                <a role="button" class="contrast outline" href="#about">À propos</a>
+                <a role="button" class="contrast outline menuItem" href="#about">À propos</a>
             </li>
             <li>
-                <a role="button" class="contrast outline" href="#contact">Contact</a>
+                <a role="button" class="contrast outline menuItem" href="#contact">Contact</a>
             </li>
         </ul>
+        <button class="contrast hamburger">
+            <!-- material icons https://material.io/resources/icons/ -->
+            <i class="menuIcon material-icons">menu</i>
+            <i class="closeIcon material-icons">close</i>
+        </button>
     </nav>
     <main class="container">
         <section id="projects">
@@ -185,6 +191,32 @@
             document.getElementsByClassName('theme-label')[0].innerHTML = "Turn on dark mode";
         }
     }
+
+    const menu = document.querySelector(".menu");
+    const menuItems = document.querySelectorAll(".menuItem");
+    const hamburger = document.querySelector(".hamburger");
+    const closeIcon = document.querySelector(".closeIcon");
+    const menuIcon = document.querySelector(".menuIcon");
+
+    function toggleMenu() {
+        if (menu.classList.contains("showMenu")) {
+            menu.classList.remove("showMenu");
+            closeIcon.style.display = "none";
+            menuIcon.style.display = "block";
+        } else {
+            menu.classList.add("showMenu");
+            closeIcon.style.display = "block";
+            menuIcon.style.display = "none";
+        }
+    }
+
+    hamburger.addEventListener("click", toggleMenu);
+
+    menuItems.forEach(
+        function (menuItem) {
+            menuItem.addEventListener("click", toggleMenu);
+        }
+    )
 </script>
 
 </html>
