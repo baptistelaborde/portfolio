@@ -200,10 +200,20 @@
 
     function toggleMenu() {
         if (menu.classList.contains("showMenu")) {
+            menuItems.forEach(
+                function (menuItem) {
+                    menuItem.classList.add("outline");
+                }
+            )
             menu.classList.remove("showMenu");
             closeIcon.style.display = "none";
             menuIcon.style.display = "block";
         } else {
+            menuItems.forEach(
+                function (menuItem) {
+                    menuItem.classList.remove("outline");
+                }
+            )
             menu.classList.add("showMenu");
             closeIcon.style.display = "block";
             menuIcon.style.display = "none";
