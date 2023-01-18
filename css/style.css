@@ -1,0 +1,60 @@
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding-top: 13vh;
+    margin-bottom: 0;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    z-index: 100;
+    background: linear-gradient(to bottom, var(--background-color), var(--background-color), var(--background-color), transparent);
+}
+
+#projects,
+#about,
+#contact {
+    text-align: center;
+}
+
+#card-bl {
+    display: flex;
+    align-items: center;
+}
+
+#card-bl .photo {
+    height: 35vh;
+    object-fit: cover;
+    padding-right: 3%;
+}
+
+#card-bl blockquote {
+    text-align: left;
+}
+
+#contact article {
+    margin-top: 2vh;
+}
+
+#contact form {
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    #card-bl {
+        flex-direction: column;
+    }
+
+    #card-bl .photo {
+        padding-right: 0;
+        height: 20vh;
+        width: 20vh;
+        border-radius: 50%;
+    }
+}
