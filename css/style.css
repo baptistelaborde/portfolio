@@ -27,6 +27,53 @@ section {
     text-align: center;
 }
 
+#projects hgroup {
+    margin-bottom: 7vh;
+}
+
+#projects article {
+    margin-top: 0;
+    padding-top: 2vh;
+}
+
+#projects article .bg-image {
+    height: 25vh;
+}
+
+#projects article div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects article div * {
+    margin: 0 .5rem;
+}
+
+.projet1 {
+    background-image: url(/images/netflop.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.projet2 {
+    background-image: url(/images/pong.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.projet4 {
+    background-image: url(/images/lowatem.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.projet5 {
+    background-image: url(/images/beer&bear.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 #card-bl {
     display: flex;
     align-items: center;
