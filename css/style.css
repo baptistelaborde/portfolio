@@ -36,7 +36,7 @@ section {
     padding-top: 2vh;
 }
 
-#projects article .bg-image {
+.bg-image {
     height: 25vh;
 }
 
@@ -98,6 +98,10 @@ section {
 }
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
+    #projects article div {
+        flex-direction: column;
+    }
+
     #card-bl {
         flex-direction: column;
     }
