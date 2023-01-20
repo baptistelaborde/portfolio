@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <title>Retour d'expérience • Netflop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="netflop.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/switcher.css">
+</head>
+
+<body>
+    <nav id="navbar" class="container-fluid">
+        <ul style="padding-left: 2%;">
+            <li>
+                <a class="contrast" href="../../index.html">
+                    <h2 style="margin-bottom: 0;">BL</h2>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu" style="padding-right: 2%;">
+            <li>
+                <a role="button" class="contrast outline menuItem" href="../../index.html">Accueil</a>
+            </li>
+            <li>
+                <a role="button" class="contrast outline menuItem" href="../../index.html#projects">Projets</a>
+            </li>
+            <li>
+                <a role="button" class="contrast outline menuItem" href="../../index.html#about">À propos</a>
+            </li>
+            <li>
+                <a role="button" class="contrast outline menuItem" href="../../index.html#contact">Contact</a>
+            </li>
+        </ul>
+        <button class="contrast hamburger">
+            <!-- material icons https://material.io/resources/icons/ -->
+            <i class="menuIcon material-icons">menu</i>
+            <i class="closeIcon material-icons">close</i>
+        </button>
+    </nav>
+    <main class="container">
+        <section id="retexp">
+            <hgroup>
+                <h1>Retour d'expérience</h1>
+                <h2>Netflop</h2>
+            </hgroup>
+            <div class="grid">
+                <article>
+                    <h2>Cahier des charges</h2>
+                    <!-- TODO (éventuellement: accordéon) -->
+                </article>
+                <div>
+                    <article class="slideshow-container">
+                        <h2>Résultat</h2>
+                        <div class="mySlides fade">
+                            <img src="img/netflop_accueil.png" style="width:100%">
+                            <div class="text">Page d'accueil</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="img/netflop_catalogue.png" style="width:100%">
+                            <div class="text">Catalogue de séries</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="img/netflop_serie.png" style="width:100%">
+                            <div class="text">Page d'une série</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="img/netflop_critiques.png" style="width:100%">
+                            <div class="text">Critiques</div>
+                        </div>
+                    </article>
+                    <article>
+                        <h2>Expérience</h2>
+                        <!-- TODO -->
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <button onclick="toggleDarkMode()" class="contrast theme-switcher switcher" aria-label="Toggle dark mode">
+        <i class="theme-label">Turn off dark mode</i></button>
+    <!-- Note à moi-même: ne pas placer le </button> sur la ligne en-dessous: ça casse le style -->
+</body>
+
+<script>
+    function toggleDarkMode() {
+        if (document.documentElement.getAttribute('data-theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.getElementsByClassName('theme-label')[0].innerHTML = "Turn off dark mode";
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.getElementsByClassName('theme-label')[0].innerHTML = "Turn on dark mode";
+        }
+    }
+
+    const menu = document.querySelector(".menu");
+    const menuItems = document.querySelectorAll(".menuItem");
+    const hamburger = document.querySelector(".hamburger");
+    const closeIcon = document.querySelector(".closeIcon");
+    const menuIcon = document.querySelector(".menuIcon");
+
+    function toggleMenu() {
+        if (window.innerWidth <= 768) {
+            if (menu.classList.contains("showMenu")) {
+                menuItems.forEach(
+                    function (menuItem) {
+                        menuItem.classList.add("outline");
+                    }
+                )
+                menu.classList.remove("showMenu");
+                closeIcon.style.display = "none";
+                menuIcon.style.display = "block";
+            } else {
+                menuItems.forEach(
+                    function (menuItem) {
+                        menuItem.classList.remove("outline");
+                    }
+                )
+                menu.classList.add("showMenu");
+                closeIcon.style.display = "block";
+                menuIcon.style.display = "none";
+            }
+        }
+    }
+
+    hamburger.addEventListener("click", toggleMenu);
+
+    menuItems.forEach(
+        function (menuItem) {
+            menuItem.addEventListener("click", toggleMenu);
+        }
+    )
+
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 6000); // Change image every 2 seconds
+    }
+</script>
+
+</html>
