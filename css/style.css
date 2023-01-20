@@ -33,6 +33,12 @@
     background-size: cover;
 }
 
+.projet3 {
+    background-image: url(/images/tourism_rentals.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 .projet4 {
     background-image: url(/images/lowatem.jpg);
     background-position: center;
@@ -41,6 +47,12 @@
 
 .projet5 {
     background-image: url(/images/beer&bear.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.projet6 {
+    background-image: url(/images/cbl_encryption.jpg);
     background-position: center;
     background-size: cover;
 }
